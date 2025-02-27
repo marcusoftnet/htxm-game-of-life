@@ -51,7 +51,6 @@ app.post("/cell/:x/:y", async (req, res) => {
     x: x,
     y: y,
     alive: newState === "1",
-    GRID_SIZE,
   });
 });
 
