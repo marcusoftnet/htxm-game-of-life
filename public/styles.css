@@ -1,0 +1,60 @@
+h1 {
+  text-align: center;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  color: #333;
+  margin: 2rem 0;
+  font-weight: 300;
+  font-size: 2.5rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.controls {
+  text-align: center;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  margin: 20px auto;
+  max-width: 500px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.controls input[type="range"] {
+  flex: 1;
+}
+
+#speed-value {
+  min-width: 60px;
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 2px;
+  margin: 20px auto;
+  background: #eee;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+td {
+  width: 30px;
+  height: 30px;
+  padding: 0;
+}
+
+.alive {
+  background-color: #000;
+  border-radius: 4px;
+  width: 30px;
+  height: 30px;
+  transition: all 0.2s ease;
+}
+
+.dead {
+  background-color: #fff;
+  border-radius: 4px;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ddd;
+  transition: all 0.2s ease;
+}

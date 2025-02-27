@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTMX Conway's Game of Life</title>
+    <script src="https://unpkg.com/htmx.org"></script>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+<h1>HTMX Conway's Game of Life</h1>
+
+<div id="controls">
+    {{> controls speed=200}}
+</div>
+
+<table>
+    {{#each (range GRID_SIZE) as |row|}}
+    <tr>
+        {{#each (range ../GRID_SIZE) as |col|}}
+        <td>
+            {{> cell x=col y=row}}
+        </td>
+        {{/each}}
+    </tr>
+    {{/each}}
+</table>
+
+</body>
+</html>

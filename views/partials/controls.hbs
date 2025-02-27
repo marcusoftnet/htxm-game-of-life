@@ -1,0 +1,15 @@
+<div class="controls">
+  <label for="speed">Simulation Speed:</label>
+  <input
+    type="range"
+    id="speed"
+    name="speed"
+    min="50"
+    max="5000"
+    value="{{speed}}"
+    hx-post="/speed"
+    hx-trigger="input"
+    hx-target="#controls"
+  />
+  <span id="speed-value">{{speed}}ms</span>
+</div>

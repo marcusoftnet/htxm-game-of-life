@@ -1,0 +1,28 @@
+<div id="cell-{{x}}-{{y}}"
+     data-state="{{#if (randomAlive)}}1{{else}}0{{/if}}"
+     hx-post="/cell/{{x}}/{{y}}"
+     hx-trigger="click,
+                 update-cell-{{sub x 1}}-{{sub y 1}} from:body delay:200ms,
+                 update-cell-{{sub x 1}}-{{y}} from:body delay:200ms,
+                 update-cell-{{sub x 1}}-{{add y 1}} from:body delay:200ms,
+                 update-cell-{{x}}-{{sub y 1}} from:body delay:200ms,
+                 update-cell-{{x}}-{{add y 1}} from:body delay:200ms,
+                 update-cell-{{add x 1}}-{{sub y 1}} from:body delay:200ms,
+                 update-cell-{{add x 1}}-{{y}} from:body delay:200ms,
+                 update-cell-{{add x 1}}-{{add y 1}} from:body delay:200ms"
+     hx-vals='js:{
+       "state": document.querySelector("#cell-{{x}}-{{y}}").getAttribute("data-state"),
+       "neighbors": [
+         document.querySelector("#cell-{{sub x 1}}-{{sub y 1}}")?.getAttribute("data-state") ?? null,
+         document.querySelector("#cell-{{sub x 1}}-{{y}}")?.getAttribute("data-state") ?? null,
+         document.querySelector("#cell-{{sub x 1}}-{{add y 1}}")?.getAttribute("data-state") ?? null,
+         document.querySelector("#cell-{{x}}-{{sub y 1}}")?.getAttribute("data-state") ?? null,
+         document.querySelector("#cell-{{x}}-{{add y 1}}")?.getAttribute("data-state") ?? null,
+         document.querySelector("#cell-{{add x 1}}-{{sub y 1}}")?.getAttribute("data-state") ?? null,
+         document.querySelector("#cell-{{add x 1}}-{{y}}")?.getAttribute("data-state") ?? null,
+         document.querySelector("#cell-{{add x 1}}-{{add y 1}}")?.getAttribute("data-state") ?? null
+       ]
+     }'
+     hx-target="this"
+     class="{{#if (randomAlive)}}alive{{else}}dead{{/if}}">
+</div>
