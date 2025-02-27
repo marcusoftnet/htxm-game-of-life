@@ -1,5 +1,11 @@
 <div id="cell-{{x}}-{{y}}"
-     data-state="{{#if (randomAlive)}}1{{else}}0{{/if}}"
+    {{#if (randomAlive)}}
+     data-state="1"
+     class="alive"
+    {{else}}
+     data-state="0"
+     class="dead"
+    {{/if}}
      hx-post="/cell/{{x}}/{{y}}"
      hx-trigger="click,
                  update-cell-{{sub x 1}}-{{sub y 1}} from:body delay:200ms,
@@ -23,6 +29,5 @@
          document.querySelector("#cell-{{add x 1}}-{{add y 1}}")?.getAttribute("data-state") ?? null
        ]
      }'
-     hx-target="this"
-     class="{{#if (randomAlive)}}alive{{else}}dead{{/if}}">
+     hx-target="this">
 </div>
