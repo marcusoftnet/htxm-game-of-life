@@ -2,6 +2,8 @@
 
 A simple implementation of Conway's Game of Life using HTMX, Express, and Handlebars. This project demonstrates how to build an interactive web application with minimal JavaScript, letting the server drive the UI updates.
 
+This repo holds the code for this blog post: [Conway's Game of Life with HTMX](https://www.marcusoft.net/2025/02/conway-hateoas-htmx.html).
+
 ## Key Features
 
 - Pure HTMX implementation - minimal JavaScript
